@@ -35,7 +35,7 @@ class proxyRedirectClass extends React.Component {
                     <Button variant="contained" className={classes.button}>Redirect</Button>
                 </Link>
                 ) : (
-                    <Button variant="contained" href='/admin' className={classes.button}>Redirect</Button>
+                    <Button variant="contained" href='/admin' className={[classes.button,classes.link]}>Redirect</Button>
                 )
                 } 
             </div>

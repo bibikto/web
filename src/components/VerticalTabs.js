@@ -90,7 +90,7 @@ class VerticalTabsClass extends React.Component {
                     <Tab label="Online Proxy" {...a11yProps(2)} />
                 </Tabs>
                 <TabPanel className={classes.tabPanel} value={value} index={0}>
-                    <ProxyRedirect name="Pi-Hole Admin Panel" link="/admin/" />
+                    <ProxyRedirect name="Pi-Hole Admin Panel" />
                 </TabPanel>
                 <TabPanel className={classes.tabPanel} value={value} index={1}>
                     <VerticalLinearStepper />

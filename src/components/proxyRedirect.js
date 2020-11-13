@@ -28,9 +28,16 @@ class proxyRedirectClass extends React.Component {
         return (
             <div className={classes.root}>
                 <div>Click Below To Redirect To The {this.props.name}!</div>
+                {
+                this.props.name == "Online Proxy" ? 
+                (
                 <Link to={this.props.link} className={classes.link}>
                     <Button variant="contained" className={classes.button}>Redirect</Button>
                 </Link>
+                ) : (
+                    <Button variant="contained" href='/admin' className={classes.button}>Redirect</Button>
+                )
+                } 
             </div>
         )
     }

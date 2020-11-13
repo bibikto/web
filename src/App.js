@@ -42,7 +42,6 @@ function App() {
       <Switch>
         <Route path="/" component={indexPage} exact />
         <Route path="/proxy" component={ProxyComp} />
-        <Route path="/admin/" />
       </Switch>
     </BrowserRouter>
   )

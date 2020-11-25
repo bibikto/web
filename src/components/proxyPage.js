@@ -78,7 +78,7 @@ class ProxyPageClass extends React.Component {
             this.setState({ value: 'https://' + url })
             url = 'https://' + url
         }
-        let url1 = '/api/cors' + url
+        let url1 = '/api/cors/' + url
         axios.get(url1)
             .then(function (data) {
                 self.setState({ srcdoc: data.data })

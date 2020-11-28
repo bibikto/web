@@ -12,7 +12,7 @@ const theme = createMuiTheme({
   }
 });
 
-function indexPage() {
+function IndexPage() {
   return (
     <ThemeProvider theme={theme} >
       <div className='parentCon mainComp'>
@@ -40,8 +40,8 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={indexPage} exact />
-        <Route path="/proxy" component={ProxyComp} />
+        <Route path="/" exact><IndexPage /></Route>
+        <Route path="/proxy" ><ProxyComp /></Route>
       </Switch>
     </BrowserRouter>
   )

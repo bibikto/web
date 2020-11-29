@@ -15,7 +15,7 @@ export const setAuthToken = token => {
 // verify refresh token to generate new access token if refresh token is present
 export const verifyTokenService = async () => {
   try {
-    return await axios.post(`/api/verifyToken/`);
+    return await axios.post(`https://35.154.15.13/api/verifyToken/`);
   } catch (err) {
     return {
       error: true,
@@ -27,7 +27,7 @@ export const verifyTokenService = async () => {
 // user login API to validate the credential
 export const userLoginService = async (username, password) => {
   try {
-    return await axios.post(`/api/users/signin/`, { username, password });
+    return await axios.post(`https://35.154.15.13/api/users/signin/`, { username, password });
   } catch (err) {
     return {
       error: true,
@@ -39,7 +39,7 @@ export const userLoginService = async (username, password) => {
 // manage user logout
 export const userLogoutService = async () => {
   try {
-    return await axios.post(`/api/users/logout/`);
+    return await axios.post(`https://35.154.15.13/api/users/logout/`);
   } catch (err) {
     return {
       error: true,

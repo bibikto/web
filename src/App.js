@@ -1,4 +1,4 @@
-import React, { useEffect }  from 'react';
+import React, { useEffect } from 'react';
 import { Switch, BrowserRouter, Route } from 'react-router-dom'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles/'
 import MainCon from './components/MainCon'
@@ -44,10 +44,10 @@ function ProxyComp() {
   )
 }
 
-function LoginComp () {
+function LoginComp() {
   return (
     <ThemeProvider theme={theme} >
-      <Login/>
+      <Login />
     </ThemeProvider>
   )
 }
@@ -62,11 +62,8 @@ function App() {
   useEffect(() => {
     dispatch(verifyTokenAsync());
   }, []);
- 
-  // checking authentication
-  if (authLoading) {
-    return <div className="content">Checking Authentication...</div>
-  }
+
+
 
   return (
 

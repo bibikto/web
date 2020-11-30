@@ -63,7 +63,7 @@ function App() {
     dispatch(verifyTokenAsync());
   }, []);
 
-
+  console.log(isAuthenticated)
 
   return (
 

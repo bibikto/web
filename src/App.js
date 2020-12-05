@@ -1,14 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Switch, BrowserRouter, Route } from 'react-router-dom'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles/'
 import MainCon from './components/MainCon'
 import VerticalTabs from './components/VerticalTabs'
 import ProxyPage from './components/proxyPage'
-import AppBarComp from './components/AppBarComp'
-import Login from './components/Login'
-import PublicRoute from './routes/PublicRoute'
-import { verifyTokenAsync } from './asyncActions/authAsyncActions';
-import { useSelector, useDispatch } from 'react-redux';
+//import AppBarComp from './components/AppBarComp'
+//import Login from './components/Login'
 
 const theme = createMuiTheme({
   palette: {
@@ -24,7 +21,7 @@ class IndexPage extends React.Component {
 
     return (
       <ThemeProvider theme={theme} >
-        <AppBarComp />
+        {/* <AppBarComp /> */}
         <div className='parentCon mainComp'>
           <div className="innerCon">
             <MainCon />
@@ -44,35 +41,24 @@ function ProxyComp() {
   )
 }
 
-function LoginComp() {
+/*function LoginComp() {
   return (
     <ThemeProvider theme={theme} >
       <Login />
     </ThemeProvider>
   )
-}
+}*/
 
 
 function App() {
-  const authObj = useSelector(state => state.auth);
-  const dispatch = useDispatch();
-
-  const { authLoading, isAuthenticated } = authObj;
-
-  useEffect(() => {
-    dispatch(verifyTokenAsync());
-  }, []);
-
-  console.log(isAuthenticated)
-
   return (
 
     <BrowserRouter>
       <Switch>
 
-        <PublicRoute path="/" component={IndexPage} isAuthenticated={isAuthenticated} exact></PublicRoute>
-        <PublicRoute path="/proxy" component={ProxyComp} isAuthenticated={isAuthenticated}></PublicRoute>
-        <PublicRoute path="/login" component={LoginComp} isAuthenticated={isAuthenticated}></PublicRoute>
+        <Route path="/" exact><IndexPage /></Route>
+        <Route path="/proxy"  ><ProxyComp/></Route>
+        {/* <Route path="/login" ><LoginComp /></Route> */}
 
       </Switch>
     </BrowserRouter>

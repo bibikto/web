@@ -4,12 +4,17 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles/'
 import MainCon from './components/MainCon'
 import VerticalTabs from './components/VerticalTabs'
 import ProxyPage from './components/proxyPage'
+import TorrentToDrive from './components/TorrentToDrive'
+import ProgressPage from './components/ProgressPage'
 //import AppBarComp from './components/AppBarComp'
 //import Login from './components/Login'
 
 const theme = createMuiTheme({
   palette: {
     type: "dark",
+    primary : {
+      main: '#14AFF1'
+    }
   },
 });
 
@@ -41,6 +46,21 @@ function ProxyComp() {
   )
 }
 
+function TorrentToDriveComp() {
+  return (
+    <ThemeProvider theme={theme} >
+      <TorrentToDrive/>
+    </ThemeProvider>
+  )
+}
+function TorrentToDriveProgressComp() {
+  return (
+    <ThemeProvider theme={theme} >
+      <ProgressPage/>
+    </ThemeProvider>
+  )
+}
+
 /*function LoginComp() {
   return (
     <ThemeProvider theme={theme} >
@@ -59,7 +79,8 @@ function App() {
         <Route path="/" exact><IndexPage /></Route>
         <Route path="/proxy"  ><ProxyComp/></Route>
         {/* <Route path="/login" ><LoginComp /></Route> */}
-
+        <Route path="/torrenttodrive"><TorrentToDriveComp/></Route>
+        <Route path="/progress" ><TorrentToDriveProgressComp/></Route>
       </Switch>
     </BrowserRouter>
 

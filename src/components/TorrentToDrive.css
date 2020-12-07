@@ -1,0 +1,24 @@
+.formField {
+    width: 50vw;
+}
+
+.inputField {
+        flex: 1;
+}
+
+.inputFieldDefault {
+    width: 100%;
+}
+
+.buttonCon {
+    margin-top: 2vh;
+    display: flex;
+   
+}
+
+
+@media screen and (max-width: 600px) {
+    .formField {
+        width: 100%;
+    }
+}
